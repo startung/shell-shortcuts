@@ -181,6 +181,76 @@ const COLUMNS: &[&[Section]] = &[&[
             ),
         ],
     ),
+    Section::new(
+        "Launch Programs",
+        &[
+            Shortcut::new(
+                "Shortcuts Help",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "Shift", "?"]),
+            ),
+            Shortcut::new(
+                "Terminal",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F1"]),
+            ),
+            Shortcut::new(
+                "Browser",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F2"]),
+            ),
+            Shortcut::new(
+                "Files",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F3"]),
+            ),
+            Shortcut::new(
+                "Music",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F4"]),
+            ),
+            Shortcut::new(
+                "IDE",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F5"]),
+            ),
+            Shortcut::new(
+                "Passwords",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F6"]),
+            ),
+            Shortcut::new(
+                "Unused",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F7"]),
+            ),
+            Shortcut::new(
+                "Unused",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F8"]),
+            ),
+            Shortcut::new(
+                "Unused",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F9"]),
+            ),
+            Shortcut::new(
+                "Text Editor",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F10"]),
+            ),
+            Shortcut::new(
+                "Settings",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F11"]),
+            ),
+            Shortcut::new(
+                "Calculator",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "F12"]),
+            ),
+        ],
+    ),
 ]];
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
@@ -196,6 +266,7 @@ pub enum Event {
     ExecuteCommandSh,
     ExecuteCommandTerminal,
     FloatingToggle,
+    Launch,
     MaximizeToggle,
     MoveMonitorDown,
     MoveMonitorLeft,
@@ -279,7 +350,7 @@ pub fn main(app: &gtk::Application) {
     let window = cascade! {
         gtk::ApplicationWindow::new(app);
         ..set_size_request(600, 350);
-        ..set_default_size(600, 500);
+        ..set_default_size(600, 2000);
         ..set_icon_name("input-keyboard".into());
         ..add(&content);
         ..show_all();
@@ -313,7 +384,7 @@ fn shortcuts_section() -> gtk::FlowBox {
         ..set_column_spacing(12);
     };
 
-    let event_handler: Rc<dyn Fn(&gtk::EventBox, Event)> = Rc::new(|widget, event| {
+    let event_handler: Rc<dyn Fn(&gtk::EventBox, Event)> = Rc::new(|_widget, event| {
         println!("clicked {:?}", event);
     });
 

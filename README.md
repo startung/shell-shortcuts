@@ -2,6 +2,12 @@
 
 Application for displaying and demoing Pop Shell shortcuts.
 
+This has been customised to include my:
+* shortcuts
+* display preferences 
+* install at user level
+
+
 ![](screenshot.png)
 
 ## Dependencies

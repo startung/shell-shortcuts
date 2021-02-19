@@ -1,4 +1,4 @@
-prefix ?= /usr/local
+prefix ?= ${HOME}
 
 # Files to watch for modifications
 SRC = Cargo.toml Cargo.lock $(shell find src -type f -wholename 'src/*.rs')
