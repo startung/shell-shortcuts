@@ -7,6 +7,27 @@ This has been customised to include my:
 * display preferences 
 * install at user level
 
+## Custom Shortcuts
+
+### Launch Programs
+
+* Shortcuts Help is "Super" + "Shift" + "?"
+* Terminal is "Super" + "F1"
+* Browser is "Super" + "F2"
+* Files is "Super" + "F3"
+* Music is "Super" + "F4"
+* IDE is "Super" + "F5"
+* Passwords is "Super" + "F6"
+* Text Editor is "Super" + "F10"
+* Settings is "Super" + "F11"
+* Calculator is "Super" + "F12"
+
+### Power
+
+* Shutdown is "Super" + "Shift" + "P"
+* Reboot is "Super" + "Shift" + "B"
+* Lock is "Super" + "Esc"
+* Logout is "Ctrl" + "Alt" + "Del"
 
 ![](screenshot.png)
 

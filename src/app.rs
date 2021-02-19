@@ -220,21 +220,6 @@ const COLUMNS: &[&[Section]] = &[&[
                 Schema::Hardcoded(&["Super", "F6"]),
             ),
             Shortcut::new(
-                "Unused",
-                Event::Launch,
-                Schema::Hardcoded(&["Super", "F7"]),
-            ),
-            Shortcut::new(
-                "Unused",
-                Event::Launch,
-                Schema::Hardcoded(&["Super", "F8"]),
-            ),
-            Shortcut::new(
-                "Unused",
-                Event::Launch,
-                Schema::Hardcoded(&["Super", "F9"]),
-            ),
-            Shortcut::new(
                 "Text Editor",
                 Event::Launch,
                 Schema::Hardcoded(&["Super", "F10"]),
@@ -248,6 +233,31 @@ const COLUMNS: &[&[Section]] = &[&[
                 "Calculator",
                 Event::Launch,
                 Schema::Hardcoded(&["Super", "F12"]),
+            ),
+        ],
+    ),
+    Section::new(
+        "Power",
+        &[
+            Shortcut::new(
+                "Shutdown",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "Shift", "P"]),
+            ),
+            Shortcut::new(
+                "Reboot",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "Shift", "B"]),
+            ),
+            Shortcut::new(
+                "Lock",
+                Event::Launch,
+                Schema::Hardcoded(&["Super", "Esc"]),
+            ),
+            Shortcut::new(
+                "Logout",
+                Event::Launch,
+                Schema::Hardcoded(&["Ctrl", "Alt", "Del"]),
             ),
         ],
     ),
@@ -350,7 +360,7 @@ pub fn main(app: &gtk::Application) {
     let window = cascade! {
         gtk::ApplicationWindow::new(app);
         ..set_size_request(600, 350);
-        ..set_default_size(600, 2000);
+        ..set_default_size(600, 2100);
         ..set_icon_name("input-keyboard".into());
         ..add(&content);
         ..show_all();
