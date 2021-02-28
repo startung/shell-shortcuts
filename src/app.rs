@@ -192,47 +192,47 @@ const COLUMNS: &[&[Section]] = &[&[
             Shortcut::new(
                 "Terminal",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F1"]),
+                Schema::Hardcoded(&["Super", "T"]),
             ),
             Shortcut::new(
                 "Browser",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F2"]),
+                Schema::Hardcoded(&["Super", "B"]),
             ),
             Shortcut::new(
                 "Files",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F3"]),
+                Schema::Hardcoded(&["Super", "F"]),
             ),
             Shortcut::new(
                 "Music",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F4"]),
+                Schema::Hardcoded(&["Super", "M"]),
             ),
             Shortcut::new(
                 "IDE",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F5"]),
+                Schema::Hardcoded(&["Super", "C"]),
             ),
             Shortcut::new(
                 "Passwords",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F6"]),
+                Schema::Hardcoded(&["Super", "X"]),
             ),
             Shortcut::new(
                 "Text Editor",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F10"]),
+                Schema::Hardcoded(&["Super", "W"]),
             ),
             Shortcut::new(
                 "Settings",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F11"]),
+                Schema::Hardcoded(&["Super", "E"]),
             ),
             Shortcut::new(
                 "Calculator",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "F12"]),
+                Schema::Hardcoded(&["Super", "="]),
             ),
         ],
     ),
@@ -247,7 +247,7 @@ const COLUMNS: &[&[Section]] = &[&[
             Shortcut::new(
                 "Reboot",
                 Event::Launch,
-                Schema::Hardcoded(&["Super", "Shift", "B"]),
+                Schema::Hardcoded(&["Super", "Shift", "R"]),
             ),
             Shortcut::new(
                 "Lock",
@@ -360,7 +360,8 @@ pub fn main(app: &gtk::Application) {
     let window = cascade! {
         gtk::ApplicationWindow::new(app);
         ..set_size_request(600, 350);
-        ..set_default_size(600, 2100);
+        ..set_default_size(600, 2080);
+
         ..set_icon_name("input-keyboard".into());
         ..add(&content);
         ..show_all();
